@@ -4,7 +4,7 @@ Ingtegrantes:
 - Nicolas Hidalgo -
 - Luis Armenta
 - Santiago 
-- Maiyan 
+- Maiyan Yarce
 
 hola soy luis
 Hola, soy Kathe
