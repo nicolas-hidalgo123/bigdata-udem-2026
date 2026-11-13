@@ -12,10 +12,41 @@ USE WAREHOUSE COMPUTE_WH;
 USE SCHEMA CURSO.T1;
 
 -- ---------------------------------------------------------------------
--- Pregunta 1: <copia el enunciado de la pregunta 1 de tu caso>
+-- Pregunta 1: <Viajes por distrito (BOROUGH) y mes>
 -- ---------------------------------------------------------------------
--- TODO · consulta
--- Interpretación: <qué dice el resultado, en una o dos frases>
+-- -- ---------------------------------------------------------------------
+-- Pregunta 1: Viajes por distrito (BOROUGH) y mes
+-- ¿Dónde se concentra el servicio y cómo se comparan los distritos?
+-- ---------------------------------------------------------------------
+
+WITH ZONAS AS (
+    SELECT DISTINCT
+        ZONA,
+        BOROUGH
+    FROM CURSO.LAB4.DIM_ZONA
+)
+
+SELECT
+    Z.BOROUGH AS DISTRITO,
+    YEAR(F.FECHA) AS ANIO,
+    MONTH(F.FECHA) AS MES,
+    SUM(F.VIAJES) AS TOTAL_VIAJES
+FROM CURSO.LAB4.DAILY_ZONE_METRICS F
+INNER JOIN ZONAS Z
+    ON F.ZONA = Z.ZONA
+WHERE Z.BOROUGH NOT IN ('Unknown', 'N/A')
+GROUP BY
+    Z.BOROUGH,
+    YEAR(F.FECHA),
+    MONTH(F.FECHA)
+ORDER BY
+    ANIO,
+    MES,
+    TOTAL_VIAJES DESC;
+
+-- Interpretación: Manhattan lidera la concentración del servicio con
+-- 8.251.302 viajes en marzo, seguido de Brooklyn con 5.695.991 y Queens
+-- con 4.329.102. 
 
 -- ---------------------------------------------------------------------
 -- Pregunta 2: Ranking de zonas dentro de cada distrito 
@@ -31,24 +62,48 @@ SELECT BOROUGH, ZONA, VIAJES,
 FROM zb
 QUALIFY RK <= 3
 ORDER BY BOROUGH, RK;
---Interpretación: En Queens el ranking lo encabezan los dos aeropuertos,
--- LaGuardia (1 069 364 viajes) y JFK (1 057 240), casi empatados; juntos
--- duplican a la tercera zona, Astoria (588 138). Es la mayor concentración
--- entre los distritos (la zona 1 tiene 1,8 veces los viajes de la zona 3).
--- Manhattan, en cambio, reparte la demanda: East Village (842 537), Times
--- Sq/Theatre District (738 384) y Midtown Center (716 124) están a menos de
--- 18 % de distancia. Brooklyn y el Bronx los lideran zonas residenciales
--- (Crown Heights North, 807 434; Mott Haven/Port Morris, 361 546), y Staten
--- Island tiene el menor volumen (líder: Saint George/New Brighton, 122 492).
--- Newark Airport (EWR) aparece con solo 2 viajes, por lo que su peso es
--- insignificante y por eso es la única zona de su distrito.
--- Unknown y N/A se excluyeron del ranking porque no son lugares reales.
+-- Interpretación: Queens concentra sus mayores viajes en LaGuardia
+-- (1.069.364) y JFK (1.057.240), mientras Manhattan es liderado
+-- por East Village (842.537) y Brooklyn por Crown Heights North
+-- (807.434). Esto evidencia que la concentración del servicio varía
+-- entre distritos y que las zonas aeroportuarias tienen un peso
+-- importante en Queens.
 
 -- ---------------------------------------------------------------------
--- Pregunta 3: <copia el enunciado>
+-- Pregunta 3: <Propina promedio ponderada por distrito y empresa>
 -- ---------------------------------------------------------------------
--- TODO · consulta
--- Interpretación: <...>
+-- WITH ZONAS AS (
+    SELECT DISTINCT
+        ZONA,
+        BOROUGH
+    FROM CURSO.LAB4.DIM_ZONA
+)
+
+SELECT
+    Z.BOROUGH AS DISTRITO,
+    F.EMPRESA,
+    ROUND(
+        SUM(F.PROPINA_PROMEDIO * F.VIAJES)
+        / NULLIF(SUM(F.VIAJES), 0),
+        2
+    ) AS PROPINA_PROMEDIO_PONDERADA,
+    SUM(F.VIAJES) AS TOTAL_VIAJES
+FROM CURSO.LAB4.DAILY_ZONE_METRICS F
+INNER JOIN ZONAS Z
+    ON F.ZONA = Z.ZONA
+WHERE Z.BOROUGH NOT IN ('Unknown', 'N/A')
+GROUP BY
+    Z.BOROUGH,
+    F.EMPRESA
+ORDER BY
+    DISTRITO,
+    PROPINA_PROMEDIO_PONDERADA DESC;
+
+-- Interpretación: Lyft presenta una propina promedio ponderada superior
+-- a Uber en Bronx (0,38 frente a 0,31), Brooklyn (0,99 frente a 0,73),
+-- Manhattan (1,50 frente a 1,43) y Queens (1,30 frente a 1,23).
+-- En EWR, Uber registra 11,91, pero corresponde únicamente a 2 viajes,
+-- por lo que no es una comparación representativa.
 
 -- ---------------------------------------------------------------------
 -- Pregunta 4: Media móvil de 7 días de viajes: aeropuertos frente al resto
@@ -78,13 +133,13 @@ SELECT FECHA, GRUPO, VIAJES,
        ROUND(VIAJES * 100 / SUM(VIAJES) OVER (PARTITION BY FECHA), 2) AS PCT_DEL_DIA
 FROM serie
 ORDER BY GRUPO, FECHA;
--- Interpretación: (¿qué porcentaje del total son los aeropuertos? ¿su media móvil es más estable o más volátil que la del resto?)
--- Inter-- Interpretación: Los aeropuertos son una parte pequeña del servicio: entre
+
+-- Interpretación: Los aeropuertos son una parte pequeña del servicio: entre
 -- 2 % y 6 % de los viajes de cada día. Se comportan al revés que el resto de
 -- la ciudad: caen los sábados (mínimo de 13 955 viajes el 3 de febrero) y
 -- suben domingos y lunes, mientras el resto tiene sus picos los sábados
 -- (868 038 el 9 de marzo). Su media móvil de 7 días se mantiene estable,
--- entre unos 21 000 y 25 000 viajes.pretación: <...>
+-- entre unos 21 000 y 25 000 viajes.
 
 -- ---------------------------------------------------------------------
 -- Pregunta 5: Participación de cada zona en su distrito y su cambio frente al mes anterior
