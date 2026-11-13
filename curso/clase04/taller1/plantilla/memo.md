@@ -1,13 +1,12 @@
 # Memo · ¿La lluvia cambia los viajes en NYC? (Taller 1)
 
-Equipo: <nombres> · Anfitrión: <nombre> · Caso: <A, B o C> · Fecha: <fecha>
+Equipo: <Nicolas Hidalgo, Luis Armenta, Maiyan Yarce, Santiago Giraldo> · Anfitrión: <Nicolas Hidalgo> · Caso: <C> · Fecha: <2026-11-13>
 
-> Una página. Escribe para una persona que no sabe SQL y debe decidir algo con esto. Borra las
-> instrucciones entre «>» al terminar.
+
 
 ## Pregunta y decisión
 
-### C2 Ranking de zonas dentro de cada distrito
+### 
 
 
 ## Hallazgos
