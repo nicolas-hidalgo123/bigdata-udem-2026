@@ -1,6 +1,6 @@
 # Costos · Taller 1
 
-Equipo: <nombres> · Cuenta que reporta (anfitrión): <nombre>
+Equipo: <Nicolas Hidalgo, Luis Armenta, Maiyan Yarce, Santiago Giraldo> · Cuenta que reporta (anfitrión): Nicolas Hidalgo
 
 ## Créditos usados
 
@@ -15,15 +15,28 @@ FROM TABLE(INFORMATION_SCHEMA.WAREHOUSE_METERING_HISTORY(
 
 | Día medido | Warehouse | Tamaño | Créditos |
 |---|---|---|---|
-| <fecha> | COMPUTE_WH | XS | <valor> |
+| 2026-11-13 | COMPUTE_WH | X-Small | 0.1322 |
 
 Referencia de presupuesto (estimación del pensum, no medida): hasta 0.3 créditos el Lab 4 y hasta 0.8 el taller en clase.
 
 ## Consulta más pesada
 
 - Consulta: <cuál es y a qué pregunta pertenece (por ejemplo, la 3 del caso A)>.
-- Cómo la encontraste: Snowsight > Monitoring > Query History > ordenar por duración.
-- Captura del Query Profile: `query_profile.png` (en esta carpeta).
+![consulta_con_mas_duracion](../plantilla/imagenes/query_profile.png)
+
+la Query pertenece a "verificar_t1.sql"
+
+- Cómo la encontraste: usamos la seiguiente query para encontrarla
+
+SELECT QUERY_ID, ROUND(TOTAL_ELAPSED_TIME / 1000, 1) AS SEGUNDOS,
+       LEFT(QUERY_TEXT, 80) AS CONSULTA
+FROM TABLE(INFORMATION_SCHEMA.QUERY_HISTORY(RESULT_LIMIT => 1000))
+WHERE QUERY_TEXT ILIKE '%FACT_VIAJES_DIA%'
+  AND QUERY_TEXT NOT ILIKE '%QUERY_HISTORY%'
+ORDER BY TOTAL_ELAPSED_TIME DESC
+LIMIT 5;
+
+![consultas_top5](../plantilla//imagenes/Querys_duration.png)
 
 ## Lectura del Query Profile
 
