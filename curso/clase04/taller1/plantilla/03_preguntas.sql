@@ -19,6 +19,7 @@ USE SCHEMA CURSO.T1;
 
 -- ---------------------------------------------------------------------
 -- Pregunta 2: Ranking de zonas dentro de cada distrito 
+WITH zb AS (
   SELECT z.BOROUGH, z.ZONA, SUM(f.VIAJES) AS VIAJES
   FROM FACT_VIAJES_DIA f
   JOIN DIM_ZONA z ON f.ZONA_KEY = z.ZONA_KEY
