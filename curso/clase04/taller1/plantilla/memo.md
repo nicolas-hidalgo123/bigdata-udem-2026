@@ -7,7 +7,8 @@ Equipo: <nombres> · Anfitrión: <nombre> · Caso: <A, B o C> · Fecha: <fecha>
 
 ## Pregunta y decisión
 
-<En una frase, la pregunta que respondes y qué decisión de la autoridad de movilidad informa.>
+### C2 Ranking de zonas dentro de cada distrito
+
 
 ## Hallazgos
 

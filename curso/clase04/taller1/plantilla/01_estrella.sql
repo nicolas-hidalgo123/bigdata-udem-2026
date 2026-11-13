@@ -19,24 +19,43 @@
 --   - DIM_EMPRESA se construye con SELECT DISTINCT; no escribas los nombres de las empresas a mano.
 -- =====================================================================
 
+-- Grano: una fila por fecha, zona y empresa.
+
 USE ROLE ACCOUNTADMIN;
 USE WAREHOUSE COMPUTE_WH;
 CREATE SCHEMA IF NOT EXISTS CURSO.T1;
 USE SCHEMA CURSO.T1;
 
--- TODO · DIM_EMPRESA: clave y nombre de la empresa.
--- CREATE OR REPLACE TABLE DIM_EMPRESA ( ... );
+CREATE OR REPLACE TABLE DIM_ZONA (
+  ZONA_KEY     NUMBER PRIMARY KEY,
+  ZONA         VARCHAR,
+  BOROUGH      VARCHAR,
+  SERVICE_ZONE VARCHAR
+);
 
--- TODO · DIM_ZONA: clave única, zona, distrito (BOROUGH) y tipo de zona (SERVICE_ZONE).
--- CREATE OR REPLACE TABLE DIM_ZONA ( ... );
+CREATE OR REPLACE TABLE DIM_EMPRESA (
+  EMPRESA_KEY NUMBER PRIMARY KEY,
+  EMPRESA     VARCHAR
+);
 
--- TODO · DIM_FECHA: un día por fila, con día de la semana, fin de semana, festivo y la lluvia del día.
--- CREATE OR REPLACE TABLE DIM_FECHA ( ... );
+CREATE OR REPLACE TABLE DIM_FECHA (
+  FECHA           DATE PRIMARY KEY,
+  ANIO            NUMBER,
+  MES             NUMBER,
+  DIA_SEMANA_NUM  NUMBER,      -- 1 = lunes ... 7 = domingo
+  DIA_SEMANA      VARCHAR,
+  ES_FIN_SEMANA   BOOLEAN,
+  ES_FESTIVO      BOOLEAN,
+  NOMBRE_FESTIVO  VARCHAR,
+  LLUVIA_MM       FLOAT        -- una vez por día
+);
 
--- TODO · FACT_VIAJES_DIA: las llaves de las dimensiones y las medidas aditivas.
--- CREATE OR REPLACE TABLE FACT_VIAJES_DIA ( ... );
-
--- Claves (una línea por dimensión): cómo se une cada dimensión con el hecho y por qué esa clave es única.
---   DIM_EMPRESA: <...>
---   DIM_ZONA:    <...>
---   DIM_FECHA:   <...>
+CREATE OR REPLACE TABLE FACT_VIAJES_DIA (
+  FECHA              DATE,
+  ZONA_KEY           NUMBER,
+  EMPRESA_KEY        NUMBER,
+  VIAJES             NUMBER,
+  INGRESO_TOTAL      FLOAT,
+  PROPINA_X_VIAJES   FLOAT,    -- PROPINA_PROMEDIO * VIAJES
+  DISTANCIA_X_VIAJES FLOAT     -- DISTANCIA_PROMEDIO * VIAJES
+);
