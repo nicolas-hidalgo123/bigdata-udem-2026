@@ -103,13 +103,13 @@ ________________________________________________
 
 ## COEVALUACIÓN 2
 
-**Integrante que evalúa:** ______________________
+**Integrante que evalúa:** Luis Jose Armenta
 
 | Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
 |---|---:|---:|---:|---:|---:|
-| Integrante 1 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 3 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 4 | ___ | ___ | ___ | ___ | ___ |
+| Nicolas Hidalgo | 5 | 5 | 5 | 5 | 5 |
+| Santiago Giraldo | 5 | 5 | 5 | 5 | 5 |
+| Maiyan Yarce | 5 | 5 | 5 | 5 | 5 |
 
 **Observaciones generales:**
 
