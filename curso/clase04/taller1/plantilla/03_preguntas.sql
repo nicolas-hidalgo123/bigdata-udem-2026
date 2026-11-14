@@ -72,7 +72,7 @@ ORDER BY BOROUGH, RK;
 -- ---------------------------------------------------------------------
 -- Pregunta 3: <Propina promedio ponderada por distrito y empresa>
 -- ---------------------------------------------------------------------
--- WITH ZONAS AS (
+ WITH ZONAS AS (
     SELECT DISTINCT
         ZONA,
         BOROUGH
