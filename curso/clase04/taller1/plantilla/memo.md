@@ -89,13 +89,13 @@ Criterios:
 
 ## COEVALUACIÓN 1
 
-**Integrante que evalúa:** ______________________
+**Integrante que evalúa:** Nicolas hidalgo
 
 | Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
 |---|---:|---:|---:|---:|---:|
-| Integrante 2 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 3 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 4 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 2 | 5 | 5 | 5 | 5 | 5 |
+| Integrante 3 | 5 | 5 | 5 | 5 | 5 |
+| Integrante 4 | 5 | 5 | 5 | 5 | 5 |
 
 **Observaciones generales:**
 
