@@ -1,4 +1,4 @@
-# Taller 1 · Una estrella en Snowflake para la pregunta de la lluvia en NYC
+ # Taller 1 · Una estrella en Snowflake para la pregunta de la lluvia en NYC
 
 Big Data e Ingeniería de Datos (UdeM) · Clase 4, 10 de noviembre de 2026 · **Entrega: domingo 15 de noviembre de 2026, 23:59 (hora de Colombia)** · Equipos de hasta 4 personas
 

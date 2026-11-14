@@ -117,13 +117,13 @@ ________________________________________________
 
 ## COEVALUACIÓN 3
 
-**Integrante que evalúa:** ______________________
+**Integrante que evalúa:** Santiago Giraldo
 
 | Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
 |---|---:|---:|---:|---:|---:|
-| Integrante 1 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 2 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 4 | ___ | ___ | ___ | ___ | ___ |
+| Nicolas Hidalgo | 5 | 5 | 5 | 5 | 5 |
+| Maiyan Yarce | 5 | 5 | 5 | 5 | 5 |
+| Luis Jose Armenta | 5 | 5 | 5 | 5 | 5 |
 
 **Observaciones generales:**
 
