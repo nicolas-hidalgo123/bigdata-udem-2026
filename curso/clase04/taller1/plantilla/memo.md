@@ -135,9 +135,9 @@ ________________________________________________
 
 | Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
 |---|---:|---:|---:|---:|---:|
-| Integrante 1 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 2 | ___ | ___ | ___ | ___ | ___ |
-| Integrante 3 | ___ | ___ | ___ | ___ | ___ |
+| Nicolás Hidalgo | 5 | 5 | 5 | 5 | 5 |
+| Santiago Giraldo | 5 | 5 | 5 | 5 | 5 |
+| Luis Armenta | 5 | 5 | 5 | 5 | 5 |
 
 **Observaciones generales:**
 
@@ -147,6 +147,6 @@ ________________________________________________
 
 ## Comentario general del equipo
 
-Durante el desarrollo del Taller 1, los integrantes trabajaron en conjunto para cumplir con los objetivos propuestos. Se distribuyeron responsabilidades relacionadas con el análisis de los datos, el diseño del modelo dimensional, las consultas SQL y la interpretación de los resultados. La colaboración y la comunicación fueron importantes para avanzar en las actividades y resolver las dificultades que se presentaron.
+Durante el desarrollo del Taller 1, todos los 4 integrantes trabajarmos en conjunto para cumplir con los objetivos propuestos. Nos  distribuímos responsabilidades relacionadas con el análisis de los datos, el diseño del modelo dimensional, las consultas SQL y la interpretación de los resultados. La colaboración y la comunicación fueron importantes para avanzar en las actividades y resolver las dificultades que se presentaron.
 
 
