@@ -61,4 +61,92 @@ La participación de las zonas dentro de su distrito casi no cambió de febrero 
 - **Solo Uber y Lyft.** No incluyen taxis amarillos, ni transporte público ni otros servicios, por lo que no miden todo el movimiento de personas en la ciudad.
 - **Solo la zona de recogida.** No sabemos a dónde fueron los viajes, así que no podemos decir qué zonas reciben más gente, solo de cuáles salen más viajes.
 
+## Coevaluación
+
+# COEVALUACIÓN DEL EQUIPO
+**Asignatura:** Big Data e Ingeniería de Datos  
+**Actividad:** Taller 1 – Caso C: Aeropuertos y distritos  
+**Número de integrantes:** 4
+
+## Criterios de evaluación
+
+Calificar cada criterio de 1 a 5, donde:
+
+- **5:** Excelente
+- **4:** Bueno
+- **3:** Aceptable
+- **2:** Bajo
+- **1:** Deficiente
+
+Criterios:
+1. **Responsabilidad:** cumplió con las tareas asignadas y los tiempos establecidos.
+2. **Participación:** aportó ideas y contribuyó al desarrollo del taller.
+3. **Trabajo en equipo:** mantuvo una comunicación respetuosa y colaboró con sus compañeros.
+4. **Compromiso:** mostró interés y disposición para resolver dificultades.
+5. **Calidad del aporte:** entregó trabajo útil y pertinente para alcanzar los objetivos del proyecto.
+
+---
+
+## COEVALUACIÓN 1
+
+**Integrante que evalúa:** ______________________
+
+| Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
+|---|---:|---:|---:|---:|---:|
+| Integrante 2 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 3 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 4 | ___ | ___ | ___ | ___ | ___ |
+
+**Observaciones generales:**
+
+________________________________________________
+
+## COEVALUACIÓN 2
+
+**Integrante que evalúa:** ______________________
+
+| Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
+|---|---:|---:|---:|---:|---:|
+| Integrante 1 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 3 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 4 | ___ | ___ | ___ | ___ | ___ |
+
+**Observaciones generales:**
+
+________________________________________________
+
+## COEVALUACIÓN 3
+
+**Integrante que evalúa:** ______________________
+
+| Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
+|---|---:|---:|---:|---:|---:|
+| Integrante 1 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 2 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 4 | ___ | ___ | ___ | ___ | ___ |
+
+**Observaciones generales:**
+
+________________________________________________
+
+## COEVALUACIÓN 4
+
+**Integrante que evalúa:** Maiyan Yarce
+
+| Compañero evaluado | Responsabilidad | Participación | Trabajo en equipo | Compromiso | Calidad del aporte |
+|---|---:|---:|---:|---:|---:|
+| Integrante 1 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 2 | ___ | ___ | ___ | ___ | ___ |
+| Integrante 3 | ___ | ___ | ___ | ___ | ___ |
+
+**Observaciones generales:**
+
+________________________________________________
+
+---
+
+## Comentario general del equipo
+
+Durante el desarrollo del Taller 1, los integrantes trabajaron en conjunto para cumplir con los objetivos propuestos. Se distribuyeron responsabilidades relacionadas con el análisis de los datos, el diseño del modelo dimensional, las consultas SQL y la interpretación de los resultados. La colaboración y la comunicación fueron importantes para avanzar en las actividades y resolver las dificultades que se presentaron.
+
 
