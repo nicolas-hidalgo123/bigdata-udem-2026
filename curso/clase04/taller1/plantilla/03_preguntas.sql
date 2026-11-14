@@ -1,10 +1,12 @@
 -- =====================================================================
 -- TALLER 1 · 03_preguntas.sql · Las cinco preguntas del caso (esqueleto)
 -- =====================================================================
--- Caso elegido: <A · Competencia entre plataformas | B · Clima y festivos | C · Aeropuertos y distritos>
--- Entre las cinco preguntas usa al menos: RANK con QUALIFY, LAG y una agregación de ventana
--- (SUM o AVG con OVER). Cada pregunta lleva su enunciado arriba, su consulta y, debajo, un
--- comentario que interprete el resultado (qué dice el número y qué no dice).
+-- Caso elegido: C · Aeropuertos y distritos.
+-- Período de análisis: enero a marzo de 2024.
+-- Fuente analítica: modelo estrella de CURSO.T1.
+-- C1, C2, C3 y C5 excluyen BOROUGH = 'Unknown' y 'N/A'.
+-- C4 conserva todas las zonas y clasifica como aeropuertos
+-- SERVICE_ZONE = 'Airports' o 'EWR'.
 -- =====================================================================
 
 USE ROLE ACCOUNTADMIN;
