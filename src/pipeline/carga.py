@@ -48,9 +48,18 @@ DDL_TARIFA_POR_MILLA = (
     "TARIFA_POR_MILLA FLOAT)"
 )
 
+DDL_RANGO_DISTANCIA = (
+    "CREATE TABLE IF NOT EXISTS {tabla} ("
+    "FECHA DATE, "
+    "RANGO_DISTANCIA VARCHAR, "
+    "VIAJES NUMBER(38,0), "
+    "LLUVIA_MM FLOAT)"
+)
+
 # Cada entrada: la tabla de gold y el CREATE TABLE que se muestra para su tabla en Snowflake.
 TABLAS_A_CARGAR = [
     {"gold": "tarifa_por_milla_barrio", "ddl": DDL_TARIFA_POR_MILLA},
+    {"gold": "grupo1_rango_distancia", "ddl": DDL_RANGO_DISTANCIA},
 ]
 
 
