@@ -91,9 +91,18 @@ def agregar_metadatos(
     no depende de las otras columnas de metadatos y dos ingestas del mismo archivo dan el mismo
     hash fila por fila. Eso es lo que después permite deduplicar en silver.
     """
-    # PENDIENTE(equipo): hoy esta función devuelve df tal cual, sin metadatos. Por eso bronze
-    # no guarda de qué lote ni de qué archivo vino cada fila, y silver no puede deduplicar.
-    return df
+    from pyspark.sql import functions as F
+
+    originales = df.columns
+    huella = hash_fila(originales)
+    return df.select(
+        *originales,
+        F.lit(fecha_ingesta).alias("_fecha_ingesta"),
+        F.lit(id_lote).alias("_id_lote"),
+        huella.alias("_hash_fila"),
+        F.lit(fuente).alias("_fuente"),
+        F.lit(archivo_origen).alias("_archivo_origen"),
+    )
 
 
 def debe_ingestar(corrida: Corrida, tabla: str, mes: str) -> bool:
