@@ -86,9 +86,7 @@ def deduplicar(df: DataFrame) -> DataFrame:
     Dos filas con el mismo hash tienen exactamente los mismos valores en las columnas originales,
     así que no importa cuál de las dos se conserva. Una tabla sin repetidos queda igual.
     """
-    # PENDIENTE(equipo): hoy esta función devuelve df tal cual. Por eso, al reprocesar un mes,
-    # silver tiene cada fila dos veces (una por lote de bronze) y gold las multiplica.
-    return df
+    return df.dropDuplicates(["_hash_fila"])
 
 
 # --- funciones puras de la casa ---------------------------------------------------------------
@@ -188,6 +186,13 @@ def enriquecer(trips: DataFrame, zonas: DataFrame, clima: DataFrame) -> DataFram
                 F.col("zone_name"),
                 F.concat(F.lit("Zona "), F.col("pu_location_id").cast("string")),
             ),
+        )
+        .withColumn(
+            "rango_distancia",
+            F.when(F.col("distancia_mi").isNull(), "desconocido")
+            .when(F.col("distancia_mi") < 3, "corto")
+            .when(F.col("distancia_mi") <= 8, "medio")
+            .otherwise("largo"),
         )
         .drop("zone_name")
     )

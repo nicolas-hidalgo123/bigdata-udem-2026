@@ -9,6 +9,7 @@ from pipeline.gold import (
     COLUMNAS_TARIFA_POR_MILLA,
     TABLAS_GOLD,
     tarifa_por_milla_por_barrio,
+    viajes_por_rango_distancia,
 )
 from pipeline.silver import clima_diario, enriquecer, limpiar_viajes
 
@@ -30,8 +31,9 @@ def _enriquecido(spark, filas):
 
 
 def test_tabla_de_la_casa_esta_en_tablas_gold():
-    assert list(TABLAS_GOLD) == ["tarifa_por_milla_barrio"]
+    assert list(TABLAS_GOLD) == ["tarifa_por_milla_barrio", "grupo1_rango_distancia"]
     assert TABLAS_GOLD["tarifa_por_milla_barrio"] is tarifa_por_milla_por_barrio
+    assert TABLAS_GOLD["grupo1_rango_distancia"] is viajes_por_rango_distancia
 
 
 def test_tarifa_por_milla_valores_conocidos(spark):

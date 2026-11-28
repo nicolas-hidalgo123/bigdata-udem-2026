@@ -97,10 +97,26 @@ def tarifa_por_milla_por_barrio(enriquecido: DataFrame) -> DataFrame:
     )
 
 
+COLUMNAS_RANGO_DISTANCIA = ["fecha", "rango_distancia", "viajes", "lluvia_mm"]
+
+
+def viajes_por_rango_distancia(enriquecido: DataFrame) -> DataFrame:
+    """Una fila por fecha y rango de distancia, con la lluvia del día una sola vez."""
+    return (
+        enriquecido.groupBy(F.col("pickup_date").alias("fecha"), "rango_distancia")
+        .agg(
+            F.count(F.lit(1)).alias("viajes"),
+            F.max("lluvia_mm").alias("lluvia_mm"),
+        )
+        .select(*COLUMNAS_RANGO_DISTANCIA)
+    )
+
+
 # nombre de la tabla en gold -> función que la arma a partir del enriquecido. El equipo agrega la
 # suya aquí.
 TABLAS_GOLD = {
     "tarifa_por_milla_barrio": tarifa_por_milla_por_barrio,
+    "grupo1_rango_distancia": viajes_por_rango_distancia,
 }
 
 
